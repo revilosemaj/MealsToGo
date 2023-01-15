@@ -18,6 +18,7 @@ import {
 
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
   const {
+    placeId = "some place",
     name = "Some restaurant",
     icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
     photos = ["https://picsum.photos/700"],
@@ -36,8 +37,8 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
         <Title>{name}</Title>
         <Section>
           <Rating>
-            {ratingArray.map(() => (
-              <SvgIcon xml={star} />
+            {ratingArray.map((_, i) => (
+              <SvgIcon key={`star-${placeId}-${i}`} xml={star} />
             ))}
           </Rating>
           <SectionEnd>
