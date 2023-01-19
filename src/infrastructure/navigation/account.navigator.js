@@ -1,11 +1,10 @@
 import React from "react";
-import { Text, View } from "react-native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createStackNavigator } from "@react-navigation/stack";
 import { AccountScreen } from "../../features/account/screens/account.screen";
 import { LoginScreen } from "../../features/account/screens/login.screen";
 import { RegisterScreen } from "../../features/account/screens/register.screen";
 
-const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator();
 
 export const AccountNavigator = () => (
   <Stack.Navigator
